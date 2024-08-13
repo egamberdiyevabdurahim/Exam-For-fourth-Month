@@ -46,3 +46,17 @@ class Group:
     def __str__(self):
         return (f"Name: {self.name}, Teacher ID: {self.teacher_id}, Max Student: {self.max_student},"
                 f"Start Time: {self.start_time}, End Time: {self.end_time}, Status: {self.status}")
+
+
+class CustomOpen:
+    def __init__(self, filename: str, mode: str):
+        self.filename: str = filename
+        self.mode: str = mode
+        self.file = None
+
+    def __enter__(self):
+        self.file = open(self.filename, self.mode)
+        return self.file
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.file.close()
