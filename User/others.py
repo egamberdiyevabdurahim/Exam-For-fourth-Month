@@ -12,3 +12,11 @@ def randomer(filename: str, subject: str):
         while random_username in lis or random_username in lis2:
             random_username = random.randint(1, 10000)
         return random_username
+
+    elif subject == "password":
+        lis = [x[subject] for x in data["users"]]
+        lis2 = [x["username"] for x in data["users"]]
+        random_password = random.randint(1, 10000)
+        while random_password in lis or random_password in lis2:
+            random_password = random.randint(1, 10000)
+        return random_password
