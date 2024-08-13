@@ -20,3 +20,10 @@ def randomer(filename: str, subject: str):
         while random_password in lis or random_password in lis2:
             random_password = random.randint(1, 10000)
         return random_password
+
+    elif subject == "verification":
+        lis = [x["code"] for x in data["codes"]]
+        random_code = random.randint(1, 1000)
+        while random_code in lis:
+            random_code = random.randint(1, 1000)
+        return random_code
