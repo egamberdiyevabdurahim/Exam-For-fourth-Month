@@ -29,3 +29,14 @@ def randomer(filename: str, subject: str):
         while random_generation in lis or random_generation in lis2:
             random_generation = random.randint(1, 10000)
         return random_generation
+
+
+def dry1(file_name):
+    data: dict = read_all_data(file_name)
+    if data.get("users") is None:
+        id_student: int = 0
+    else:
+        id_student: int = max([user["id_of"] for user in data["users"]])
+    username: int = randomer(file_name, "username")
+    password: int = randomer(file_name, "password")
+    return username, password, id_student, data
