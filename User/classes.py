@@ -1,5 +1,11 @@
 from enum import Enum
 
+from colorama import Fore, init
+
+init(autoreset=True)
+
+prints = Fore.YELLOW
+
 
 class UserStatus(Enum):
     SUPER = "super"
@@ -28,7 +34,7 @@ class User:
         self.password: any = password
 
     def __str__(self):
-        return (f"ID {self.id_of}:\n"
+        return (prints+f"ID {self.id_of}:\n"
                 f"    User: {self.full_name}\n"
                 f"    Email: {self.email}\n"
                 f"    Phone: {self.phone}\n"
@@ -45,7 +51,7 @@ class Student(User):
         self.money: float = money
 
     def __str__(self):
-        return super().__str__() + f"\n    Money: {self.money}"
+        return super().__str__() +prints+ f"\n    Money: {self.money}"
 
 
 class Group:
@@ -61,7 +67,7 @@ class Group:
         self.status: bool = status
 
     def __str__(self):
-        return (f"ID {self.id_of}:\n"
+        return (prints+f"ID {self.id_of}:\n"
                 f"  Name: {self.name}\n"
                 f"  Teacher ID: {self.teacher_ids}\n"
                 f"  Student IDs: {self.student_ids}\n"
