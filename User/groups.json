@@ -1,0 +1,20 @@
+{
+    "groups": [
+        {
+            "id_of": 1,
+            "name": "N50",
+            "teacher_ids": [
+                "5"
+            ],
+            "student_ids": [
+                4,
+                7
+            ],
+            "max_student": 2,
+            "start_time": "14.08.2024",
+            "end_time": "01.01.2025",
+            "status": false,
+            "created_at": "2024-08-14 11:12:30"
+        }
+    ]
+}
