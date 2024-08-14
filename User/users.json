@@ -6,72 +6,10 @@
             "email": "egamberdiyevabdurahim@gmail.com",
             "phone": 911863616,
             "age": 16,
-            "money": 0,
             "gender": "male",
             "status": "super",
             "username": "super",
-            "password": "01012008"
-        },
-        {
-            "id_of": 2,
-            "full_name": "Vohidov Muhammda",
-            "email": "masterphoneuzb@gmail.com",
-            "phone": "912920042",
-            "age": 16,
-            "gender": "male",
-            "status": "admin",
-            "username": 4690,
-            "password": 1434
-        },
-        {
-            "id_of": 3,
-            "full_name": "Nargiza Qurbonova",
-            "email": "sharipsharipov71@gmail.com",
-            "phone": "911111111",
-            "age": 18,
-            "gender": "female",
-            "status": "teacher",
-            "username": 8749,
-            "password": 6027,
-            "created_at": "2024-08-14 10:53:20"
-        },
-        {
-            "id_of": 5,
-            "full_name": "Kamila",
-            "email": "masterphoneuzb@gmail.com",
-            "phone": "911111111",
-            "age": 15,
-            "gender": "female",
-            "status": "teacher",
-            "username": 4744,
-            "password": 146,
-            "created_at": "2024-08-14 11:31:04"
-        },
-        {
-            "id_of": 6,
-            "full_name": "asdfg",
-            "email": "a@mail.ru",
-            "phone": "911111111",
-            "age": 11,
-            "money": 0,
-            "gender": "male",
-            "status": "student",
-            "username": 9910,
-            "password": 5688,
-            "created_at": "2024-08-14 11:37:31"
-        },
-        {
-            "id_of": 7,
-            "full_name": "qsdrtyuiuhf",
-            "email": "q@mail.ru",
-            "phone": "911111111",
-            "age": 12,
-            "money": 0,
-            "gender": "female",
-            "status": "student",
-            "username": 2439,
-            "password": 8362,
-            "created_at": "2024-08-14 11:37:55"
+            "password": "super"
         }
     ]
 }
