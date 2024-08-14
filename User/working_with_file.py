@@ -1,7 +1,9 @@
 import json
 import os
-from ..main import path
-from classes import CustomOpen
+from .classes import CustomOpen
+
+
+path = f"{os.path.dirname(os.path.abspath(__file__))}/"
 
 
 def read_all_data(filename):
