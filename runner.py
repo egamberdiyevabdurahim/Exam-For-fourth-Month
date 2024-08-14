@@ -2,7 +2,7 @@ from colorama import Fore, init
 
 from main import Main
 
-from User.classes import UserGender, UserStatus, User, Group, Student
+from User.classes import UserGender, UserStatus, User
 
 init(autoreset=True)
 
