@@ -964,7 +964,7 @@ def after_login_super(user: User):
                         "5. Get All Teachers\n"
                         "6. Edit or Delete Teacher\n"
                         "7. Send Email\n"
-                        "8. Exit")
+                        "8. LogOut")
         choice: str = input(enter + "Enter: ")
         if choice == "1":
             full_name: str = input(enter + "Enter Admin Full Name: ")
@@ -1016,12 +1016,12 @@ def after_login_adm(user: User):
                         "5. Get All Students\n"
                         "6. Edit or Delete Student\n"
                         "7. Find Student By Name or ID\n"
-                        "8. Get Payment\n"
+                        "8. Get Payment for Student\n"
                         "9. Add Teacher to Group\n"
                         "10. Remove Teacher from Group\n"
                         "11. Add Student to Group\n"
                         "12. Remove Student from Group\n"
-                        "13. Exit")
+                        "13. LogOut")
         choice: str = input(enter + "Enter: ")
         if choice == "1":
             main.get_all_users_by_type(UserStatus.TEACHER.value)
@@ -1120,7 +1120,7 @@ def after_login_teacher(user: User):
         print(command + "1. Get My Groups\n"
                         "2. Get Students By Group\n"
                         "3. Start or End Lesson\n"
-                        "4. Exit")
+                        "4. LogOut")
         choice: str = input(enter + "Enter: ")
         if choice == "1":
             main.get_groups_by_teacher(str(user.id_of))
@@ -1147,7 +1147,7 @@ def after_login(user: User):
         print(command + "1. Get My All Groups\n"
                         "2. Show My Balance\n"
                         "3. Edit My Information\n"
-                        "4. Exit")
+                        "4. LogOut")
         choice: str = input(enter + "Enter: ")
         if choice == "1":
             main.get_all_groups_by_student(user.id_of)

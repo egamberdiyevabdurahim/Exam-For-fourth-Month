@@ -10,6 +10,17 @@
             "status": "super",
             "username": "super",
             "password": "super"
+        },
+        {
+            "id_of": 2,
+            "full_name": "Muso Musayev",
+            "email": "masterphoneuzb@gmail.com",
+            "phone": "911111111",
+            "age": 16,
+            "gender": "male",
+            "status": "admin",
+            "username": 2753,
+            "password": 7382
         }
     ]
 }
