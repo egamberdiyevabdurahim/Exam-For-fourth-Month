@@ -1,6 +1,6 @@
-from colorama import Fore, init
-
 import threading
+
+from colorama import Fore, init
 from datetime import datetime
 
 from User.classes import UserGender, UserStatus, User, Group, Student
@@ -655,7 +655,7 @@ class Main:
         data: dict = read_all_data(self.group_file_name)
         if data.get("groups") is None:
             print(error+"No groups found!")
-            return
+            return None
         counter: int = 0
         for group in data["groups"]:
             if teacher_id in group["teacher_ids"]:
@@ -678,6 +678,7 @@ class Main:
                     if choice == "stop":
                         return
                 self.get_student_by_group_id(int(choice))
+        return None
 
     def start_lesson(self, group_id: int):
         """
@@ -792,6 +793,7 @@ class Main:
                 print(gr)
                 print("--------------------")
         print(f"\nTotal Groups = {counter}\n")
+        return None
 
     def get_balance(self, student_id: int):
         """
@@ -800,12 +802,13 @@ class Main:
         data: dict = read_all_data(self.file_name)
         if data.get("users") is None:
             print(error+"No users found!")
-            return
+            return None
         for user in data["users"]:
             if user["id_of"] == student_id:
                 print(f"Balance: {user['money']}")
-                return
+                return None
         print(error+"User Not Found")
+        return None
 
     def edit_student(self, student_id: str):
         """
@@ -879,7 +882,7 @@ class Main:
             if state:
                 new_dat["users"].append(user)
         write_data(self.file_name, new_dat)
-        return
+        return None
 
     def get_info(self, student_id: str):
         """
@@ -1166,24 +1169,28 @@ def run():
         print(command + "1. Login\n"
                         "2. Exit")
         choice: str = input(enter + "Enter: ")
+
         if choice == "1":
             username: str = input(enter + "Enter Your Username: ")
             password: str = input(enter + "Enter Your Password: ")
+
             user: User = main.login(username=username, password=password)
             if user:
                 if user.status == UserStatus.ADMIN.value:
                     after_login_adm(user)
+
                 elif user.status == UserStatus.SUPER.value:
                     after_login_super(user)
+
                 elif user.status == UserStatus.TEACHER.value:
                     after_login_teacher(user)
+
                 elif user.status == UserStatus.STUDENT.value:
                     after_login(user)
-                break
 
         elif choice == "2":
             print(success + "Exiting...")
-            exit()
+            break
 
 
 if __name__ == '__main__':
