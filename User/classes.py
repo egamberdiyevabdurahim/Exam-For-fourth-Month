@@ -1,5 +1,4 @@
 from enum import Enum
-from datetime import datetime
 
 
 class UserStatus(Enum):
@@ -29,23 +28,47 @@ class User:
         self.password: any = password
 
     def __str__(self):
-        return (f"ID: {self.id_of}, User: {self.full_name}, Email: {self.email}, Phone: {self.phone},"
-                f"Age: {self.age}, Gender: {self.gender}, Status: {self.status}, Username: {self.username}")
+        return (f"ID {self.id_of}:\n"
+                f"    User: {self.full_name}\n"
+                f"    Email: {self.email}\n"
+                f"    Phone: {self.phone}\n"
+                f"    Age: {self.age}\n"
+                f"    Gender: {self.gender}\n"
+                f"    Status: {self.status}\n"
+                f"    Username: {self.username}")
+
+
+class Student(User):
+    def __init__(self, id_of: int, full_name: str, email: str, phone: str, age: int, gender: UserGender,
+                 status: UserStatus, username: any, password: any, money: float = 0):
+        super().__init__(id_of, full_name, email, phone, age, gender, status, username, password)
+        self.money: float = money
+
+    def __str__(self):
+        return super().__str__() + f"\n    Money: {self.money}"
 
 
 class Group:
-    def __init__(self, name: str, teacher_id: int, max_student: int,
-                 start_time: datetime, end_time: datetime, status: bool):
+    def __init__(self, id_of, name: str, teacher_id: list, max_student: int,
+                 start_time: str, end_time: str, status: bool, student_id: list = list):
+        self.id_of: int = id_of
         self.name: str = name
-        self.teacher_id: int = teacher_id
+        self.teacher_ids: list = teacher_id
+        self.student_ids: list = student_id
         self.max_student: int = max_student
-        self.start_time: datetime = start_time
-        self.end_time: datetime = end_time
+        self.start_time: str = start_time
+        self.end_time: str = end_time
         self.status: bool = status
 
     def __str__(self):
-        return (f"Name: {self.name}, Teacher ID: {self.teacher_id}, Max Student: {self.max_student},"
-                f"Start Time: {self.start_time}, End Time: {self.end_time}, Status: {self.status}")
+        return (f"ID {self.id_of}:\n"
+                f"  Name: {self.name}\n"
+                f"  Teacher ID: {self.teacher_ids}\n"
+                f"  Student IDs: {self.student_ids}\n"
+                f"  Max Student: {self.max_student}\n"
+                f"  Start Time: {self.start_time}\n"
+                f"  End Time: {self.end_time}\n"
+                f"  Status: {self.status}")
 
 
 class CustomOpen:
