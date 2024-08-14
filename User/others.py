@@ -19,6 +19,11 @@ def randomer(filename: str, subject: str):
         lis = [x[subject] for x in data["users"]]
         lis2 = [x["password"] for x in data["users"]]
 
+    elif subject == "password":
+        is_available = True
+        lis = [x[subject] for x in data["users"]]
+        lis2 = [x["username"] for x in data["users"]]
+
     if is_available:
         random_generation = random.randint(1, 10000)
         while random_generation in lis or random_generation in lis2:
